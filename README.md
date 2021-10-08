@@ -2,8 +2,10 @@
 
 Copy and paste into command line: 
 
+```
 git clone https://github.com/joywchen/info550.git
 cd info550
+```
 
 Download required R packages: 
 
