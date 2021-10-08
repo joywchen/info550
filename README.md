@@ -7,7 +7,7 @@ git clone https://github.com/joywchen/info550.git
 cd info550
 ```
 
-Download required R packages: 
+Download required R packages (using R commands): 
 
 ``` r
 installed_pkgs <- row.names(installed.packages())
