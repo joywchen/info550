@@ -2,7 +2,7 @@
 title: "Cryoablation versus Thoracic Epidural for Pain Control Following Bilateral Lung Transplantation"
 author: "Joy Chen"
 date: "`r format(Sys.Date(), '%Y-%m-%d')`"
-output: html_document
+output: bookdown::html_document2
 ---
 
 ```{r}
@@ -10,7 +10,7 @@ here::i_am('rmd/hw4.rmd')
 ```
 
 ```{r, setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 ```
 ## Introduction
 
@@ -26,7 +26,7 @@ We retrospectively identified a cohort of `r nrow(lungtx)` patients who underwen
 
 In lung transplantation, Cryoabalation was safe and had similar analgesic efficacy to thoracic epidural, as seen by similar pain scores on postoperative days 1 through 7 (Figure \@ref(fig:pain-plot).  
 
-```{r, pain-plot}
+```{r, cleaning}
 library(dplyr)
 library(tidyr)
 library(ggplot2)
@@ -57,10 +57,12 @@ pain$POD[pain$POD == 'podavg6']<-6
 pain$POD[pain$POD == 'podavg7']<-7
 pain$POD<-as.numeric(pain$POD)
 pain$group<-as.factor(pain$group)
+```
 
+```{r, pain-plot}
 ggplot(pain, aes(x=POD, y = Score, color = group)) +
   geom_point() +
-  geom_smooth(se=FALSE) +
+  geom_smooth() +
   labs(x="Post Operative Day", y = "Pain Scale 0-10")
 ```
 
