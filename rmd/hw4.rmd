@@ -4,6 +4,9 @@ author: "Joy Chen"
 date: "`r format(Sys.Date(), '%Y-%m-%d')`"
 output: html_document
 ---
+```{r}
+here::i_am('rmd/hw4.rmd')
+```
 
 ```{r, setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
