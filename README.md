@@ -4,25 +4,19 @@ Copy and paste into command line:
 
 ```
 git clone https://github.com/joywchen/info550.git
-cd info550
+cd info 550
 ```
 
-Download required R packages (using R commands): 
+Download required R packages using Renv: 
 
 ``` r
-installed_pkgs <- row.names(installed.packages())
-pkgs <- c("dplyr", "tidyr", "ggplot2")
-for(p in pkgs){
-	if(!(p %in% install_pkgs)){
-		install.packages(p)
-	}
-}
+renv::restore()
 ```
 
-Execute from the project folder:
+Run from the Info550 Directory
 
-``` bash
-Rscript -e "rmarkdown::render('hw.Rmd')"
+``` 
+make htmlreport
 ```
 
 This will create a file called `hw.html` output in your directory that contains the results.
