@@ -4,6 +4,7 @@ author: "Joy Chen"
 date: "`r format(Sys.Date(), '%Y-%m-%d')`"
 output: html_document
 ---
+
 ```{r}
 here::i_am('rmd/hw4.rmd')
 ```
@@ -19,7 +20,7 @@ knitr::opts_chunk$set(echo = FALSE)
 lungtx<-read.csv("cryo_dataset.csv")
 ```
 We retrospectively identified a cohort of `r nrow(lungtx)` patients who underwent bilateral lung transplantation at our center between May 2016-August 2018. Patients requiring re-transplantation or extracorporeal membrane oxygenation prior to transplantation were excluded. Thoracic epidural catheter was placed on the first postoperative day in all patients 
-(N=`r (sum(lungtx$group==1))`) prior to July 2017, and Cryo was utilized on all subsequent patients (N=`r (sum(lungtx$group==2)))`. In regard to the Cryo technique, bilateral interspaces 3-7 were ablated with the cyroICE probe (AtriCure Inc; Mason, OH) during surgery under direct visualization. Postoperative multimodality analgesia was performed per standard of care. The primary outcome was total oral morphine equivalent (OME) usage through postoperative day (POD) 7 and secondary outcomes were pain scores through POD7, analgesic-specific complications, ambulation, and length of stay.
+(N=`r (sum(lungtx$group==1))`) prior to July 2017, and Cryo was utilized on all subsequent patients (N=`r (sum(lungtx$group==2))`). In regard to the Cryo technique, bilateral interspaces 3-7 were ablated with the cyroICE probe (AtriCure Inc; Mason, OH) during surgery under direct visualization. Postoperative multimodality analgesia was performed per standard of care. The primary outcome was total oral morphine equivalent (OME) usage through postoperative day (POD) 7 and secondary outcomes were pain scores through POD7, analgesic-specific complications, ambulation, and length of stay.
 
 ## Results
 
@@ -55,13 +56,12 @@ pain$POD[pain$POD == 'podavg5']<-5
 pain$POD[pain$POD == 'podavg6']<-6
 pain$POD[pain$POD == 'podavg7']<-7
 pain$POD<-as.numeric(pain$POD)
-pain$group<-as.numeric(pain$group)
+pain$group<-as.factor(pain$group)
 
 ggplot(pain, aes(x=POD, y = Score, color = group)) +
   geom_point() +
   geom_smooth(method=lm, se=FALSE) +
   labs(x="Post Operative Day", y = "Pain Scale 0-10")
-  
 ```
 
 ## Discussion
