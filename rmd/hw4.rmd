@@ -60,7 +60,7 @@ pain$group<-as.factor(pain$group)
 
 ggplot(pain, aes(x=POD, y = Score, color = group)) +
   geom_point() +
-  geom_smooth(method=lm, se=FALSE) +
+  geom_smooth(se=FALSE) +
   labs(x="Post Operative Day", y = "Pain Scale 0-10")
 ```
 
