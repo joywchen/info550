@@ -7,7 +7,8 @@ cd info550
 Required R Pacakges are in the dockerfile.
 
 To pull image from DockerHub: 
-```docker pull joywchen/info550
+```
+docker pull joywchen/info550
 ```
 Mount to local directory
 ```mkdir /hw5
