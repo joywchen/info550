@@ -11,7 +11,8 @@ To pull image from DockerHub:
 docker pull joywchen/info550
 ```
 Mount to local directory
-```mkdir /hw5
+```
+mkdir /hw5
 cd hw5
 docker run -v /hw5:/hw5/output -it joywchen/info550
 ```
