@@ -2,7 +2,7 @@ FROM rocker/tidyverse
 
 # R Packages
 
-RUN Rscript -e "install.packages(c('dplyr', 'tidyr', 'ggplot2')
+RUN Rscript -e "install.packages(c('dplyr', 'tidyr', 'ggplot2')"
 
 # Create Project Directory
 RUN mkdir /hw5
