@@ -13,7 +13,7 @@ docker pull joywchen/info550
 Mount to local directory
 ```
 mkdir /output
-docker run -v /output:/hw5/output -it joywchen/info550
+docker run -v /output:/hw5 -it joywchen/info550
 ```
 Alternative: Build the image
 ```
