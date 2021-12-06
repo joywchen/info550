@@ -5,13 +5,14 @@ date: "`r format(Sys.Date(), '%Y-%m-%d')`"
 output: bookdown::html_document2
 ---
 
+```{r, setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+```
+
 ```{r}
 here::i_am('rmd/hw5.rmd')
 ```
 
-```{r, setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
-```
 ## Introduction
 
 ## Methods
