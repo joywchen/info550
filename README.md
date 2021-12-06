@@ -12,9 +12,8 @@ docker pull joywchen/info550
 ```
 Mount to local directory
 ```
-mkdir /hw5
-cd hw5
-docker run -v /hw5:/hw5/output -it joywchen/info550
+mkdir /output
+docker run -v /output:/hw5/output -it joywchen/info550
 ```
 Alternative: Build the image
 ```
